@@ -22,3 +22,6 @@ Bundle 'lepture/vim-jinja'
 
 " CSS
 Bundle 'hail2u/vim-css3-syntax'
+
+" PHP
+Bundle '2072/PHP-Indenting-for-VIm.git'
