@@ -44,6 +44,7 @@ endif
 
 " ================ Indentation ======================
 set autoindent
+set cindent
 set smartindent
 set smarttab
 set shiftwidth=2
@@ -75,6 +76,8 @@ set wildignore+=*.gem
 set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
+set wildignore+=**/node_modules/**
+set wildignore+=**/bower_components/**
 
 " ================ Scrolling ========================
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
@@ -94,12 +97,14 @@ so ~/.vim/settings.vim
 "=========================================
 
 " ================ Appearance ============
-set wrap                                 " ---------------------------------
-set nolist                               " Word wrap without linebreaks
+set nowrap                               " ---------------------------------
+set list                                 " Word wrap without linebreaks
+set listchars+=space:␣                   " Show space as character
 set linebreak                            " ---------------------------------
 set noshowmode                           " Don’t show mode - we use Lightline for that
 set guioptions=gm                        " Disable graphical tabs
 set hlsearch                             " Highlight search matches
+set incsearch                            " Enable incremental search 
 let g:enable_bold_font = 1               " Enable bold fonts
 set background=light                     " Light BG
 colorscheme PaperColorTCP
@@ -127,6 +132,7 @@ set timeoutlen=1000 ttimeoutlen=0        " Reduce delay of ESC switching out of 
 
 " =============== Plugins ================
 nnoremap <C-G> :GundoToggle<CR>          " Toggle Gundo graph view
+autocmd FileType php NeoCompleteLock
 
 " =============== Custom commands ========
 " Pretty-print minifed JSON:
