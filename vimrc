@@ -44,6 +44,7 @@ endif
 
 " ================ Indentation ======================
 set autoindent
+set cindent
 set smartindent
 set smarttab
 set shiftwidth=2
@@ -54,8 +55,18 @@ set expandtab
 filetype plugin on
 filetype indent on
 
+noremap > >>
+noremap < <<
+vnoremap > >gv
+vnoremap < <gv
+
+" au BufNewFile,BufRead *.php set filetype=phtml
+" au BufNewFile,BufRead *.php setlocal ts=2 sw=2 expandtab 
+" autocmd FileType php NeoCompleteLock
+
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
+set listchars+=space:␣
 
 " ================ Folds ============================
 set foldmethod=indent   "fold based on indent
@@ -75,6 +86,7 @@ set wildignore+=*.gem
 set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
+set omnifunc=syntaxcomplete#Complete
 
 " ================ Scrolling ========================
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
@@ -95,11 +107,12 @@ so ~/.vim/settings.vim
 
 " ================ Appearance ============
 set wrap                                 " ---------------------------------
-set nolist                               " Word wrap without linebreaks
+set list                                 " Word wrap without linebreaks
 set linebreak                            " ---------------------------------
 set noshowmode                           " Don’t show mode - we use Lightline for that
 set guioptions=gm                        " Disable graphical tabs
 set hlsearch                             " Highlight search matches
+set incsearch
 let g:enable_bold_font = 1               " Enable bold fonts
 set background=light                     " Light BG
 colorscheme PaperColorTCP

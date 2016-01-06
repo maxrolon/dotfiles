@@ -22,3 +22,8 @@ Bundle 'lepture/vim-jinja'
 
 " CSS
 Bundle 'hail2u/vim-css3-syntax'
+
+" PHP
+Bundle 'captbaritone/better-indent-support-for-php-with-html'
+Bundle 'shawncplus/phpcomplete.vim'
+Bundle "StanAngeloff/php.vim"

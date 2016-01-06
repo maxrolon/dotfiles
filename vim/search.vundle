@@ -1,3 +1,4 @@
-Bundle "rking/ag.vim"
+" Bundle "rking/ag.vim"
+" Bundle "easymotion/vim-easymotion"
+
 Bundle "vim-scripts/IndexedSearch"
-Bundle "easymotion/vim-easymotion"
